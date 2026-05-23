@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account | Radhika Sarries</title>
+  <meta name="description" content="Manage your orders, wishlist, and profile at Radhika Sarries.">
+  <meta name="google-site-verification" content="googledef9f98bae932944.html">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-container">
+      <button class="search-close" id="search-close" aria-label="Close search"><i class="fas fa-times"></i></button>
+      <div class="search-input-wrapper">
+        <i class="fas fa-search" style="font-size:1.5rem; margin-right:1rem; color:var(--clr-primary);"></i>
+        <input type="text" id="search-input" placeholder="Search for sarees, fabrics, colors...">
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__container">
+      <a href="../index.html" class="navbar__logo">Radhika Sarries</a>
+      <button class="navbar__mobile-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+      
+      <nav class="navbar__menu">
+        <ul class="navbar__nav">
+          <li><a href="../index.html" class="navbar__link">Home</a></li>
+          <li><a href="../shop/index.html" class="navbar__link">Shop</a></li>
+          <li><a href="../gallery.html" class="navbar__link">Gallery</a></li>
+          <li><a href="../testimonials.html" class="navbar__link">Testimonials</a></li>
+          <li><a href="../blog/index.html" class="navbar__link">Blog</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__actions">
+        <div class="lang-switcher">
+          <div class="lang-switcher__current"><span>EN</span> <i class="fas fa-chevron-down" style="font-size:0.7rem;"></i></div>
+          <div class="lang-switcher__dropdown">
+            <a href="#" class="lang-switcher__item" data-lang="en">English</a>
+            <a href="#" class="lang-switcher__item" data-lang="kn">ಕನ್ನಡ</a>
+            <a href="#" class="lang-switcher__item" data-lang="hi">हिंदी</a>
+          </div>
+        </div>
+        <button class="nav-icon-btn search-toggle-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <a href="index.html" class="nav-icon-btn" aria-label="Account"><i class="fas fa-user" style="color:var(--clr-primary);"></i></a>
+        <a href="../cart.html" class="nav-icon-btn" aria-label="Cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-badge" style="display:none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb" style="margin-top: calc(var(--nav-height) + var(--space-lg));">
+      <a href="../index.html">Home</a>
+      <span class="breadcrumb__sep">›</span>
+      <span class="breadcrumb__current">My Account</span>
+    </div>
+
+    <div class="account-layout">
+      <!-- SIDEBAR -->
+      <aside class="account-sidebar">
+        <div class="account-profile">
+          <div class="account-avatar">R</div>
+          <div class="account-name">Robby Nayak</div>
+          <div class="account-email">robbynayak743@gmail.com</div>
+        </div>
+        <nav class="account-nav">
+          <a href="#" class="account-nav__link active" data-target="panel-orders"><i class="fas fa-box"></i> My Orders</a>
+          <a href="#" class="account-nav__link" data-target="panel-wishlist"><i class="fas fa-heart"></i> Wishlist</a>
+          <a href="#" class="account-nav__link" data-target="panel-addresses"><i class="fas fa-map-marker-alt"></i> Addresses</a>
+          <a href="#" class="account-nav__link" data-target="panel-profile"><i class="fas fa-user-cog"></i> Profile Settings</a>
+          <a href="../index.html" class="account-nav__link" style="color:#d32f2f; margin-top:var(--space-md);"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </nav>
+      </aside>
+
+      <!-- PANELS -->
+      <div class="account-content">
+        
+        <!-- ORDERS -->
+        <div class="account-panel active" id="panel-orders">
+          <h2 class="account-panel__title">My Orders</h2>
+          <div id="orders-container">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- WISHLIST -->
+        <div class="account-panel" id="panel-wishlist">
+          <h2 class="account-panel__title">My Wishlist</h2>
+          <div class="product-grid" id="wishlist-container">
+            <!-- Rendered by JS. For phase 3 simulation, we'll just show empty state or static -->
+            <div style="grid-column: 1/-1; text-align:center; padding:var(--space-2xl) 0; color:var(--clr-text-light);">
+              <i class="far fa-heart" style="font-size:3rem; margin-bottom:1rem; opacity:0.3;"></i>
+              <p>Your wishlist is currently empty.</p>
+              <a href="../shop/index.html" class="btn btn--outline" style="margin-top:1rem;">Explore Collection</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADDRESSES -->
+        <div class="account-panel" id="panel-addresses">
+          <h2 class="account-panel__title">Saved Addresses</h2>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:var(--space-md);">
+            <div style="border:1px solid var(--clr-primary); padding:var(--space-xl); border-radius:var(--radius-sm); position:relative;">
+              <span class="badge badge--bridal" style="position:absolute; top:10px; right:10px;">DEFAULT</span>
+              <h4 style="margin-bottom:10px;">Robby Nayak</h4>
+              <p style="color:var(--clr-text-light); line-height:1.6; font-size:0.9rem;">
+                House No 42, Green Avenue<br>
+                Near City Center Mall<br>
+                Bangalore, Karnataka - 560001<br>
+                Ph: +91 7017549369
+              </p>
+              <div style="margin-top:var(--space-md); display:flex; gap:10px;">
+                <button class="btn btn--outline" style="padding:0.25rem 0.5rem; font-size:0.8rem;">Edit</button>
+                <button class="btn btn--outline" style="padding:0.25rem 0.5rem; font-size:0.8rem; border-color:#d32f2f; color:#d32f2f;">Delete</button>
+              </div>
+            </div>
+            
+            <div style="border:1px dashed var(--clr-border); padding:var(--space-xl); border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; cursor:pointer;">
+              <div style="text-align:center; color:var(--clr-primary);">
+                <i class="fas fa-plus-circle" style="font-size:2rem; margin-bottom:10px;"></i>
+                <div style="font-weight:600;">Add New Address</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROFILE -->
+        <div class="account-panel" id="panel-profile">
+          <h2 class="account-panel__title">Profile Settings</h2>
+          <div style="max-width:500px;">
+            <form class="form-grid">
+              <div class="form-group form-group--full">
+                <label>Full Name</label>
+                <input type="text" value="Robby Nayak" style="width:100%; padding:0.75rem; border:1px solid var(--clr-border); border-radius:4px;">
+              </div>
+              <div class="form-group form-group--full">
+                <label>Email Address</label>
+                <input type="email" value="robbynayak743@gmail.com" style="width:100%; padding:0.75rem; border:1px solid var(--clr-border); border-radius:4px;">
+              </div>
+              <div class="form-group form-group--full">
+                <label>Mobile Number</label>
+                <input type="tel" value="7017549369" style="width:100%; padding:0.75rem; border:1px solid var(--clr-border); border-radius:4px;">
+              </div>
+              <div class="form-group form-group--full" style="margin-top:var(--space-lg);">
+                <h4 style="margin-bottom:10px;">Change Password</h4>
+                <input type="password" placeholder="Current Password" style="width:100%; padding:0.75rem; border:1px solid var(--clr-border); border-radius:4px; margin-bottom:10px;">
+                <input type="password" placeholder="New Password" style="width:100%; padding:0.75rem; border:1px solid var(--clr-border); border-radius:4px;">
+              </div>
+              <div class="form-group form-group--full" style="margin-top:var(--space-md);">
+                <button type="button" class="btn btn--secondary">Save Changes</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__bottom">
+        <p>&copy; 2026 Radhika Sarries. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/wishlist.js"></script>
+  <script src="../js/search.js"></script>
+  <script src="../js/language.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Sidebar Navigation
+      const navLinks = document.querySelectorAll('.account-nav__link');
+      const panels = document.querySelectorAll('.account-panel');
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          if(!link.dataset.target) return;
+          e.preventDefault();
+          
+          navLinks.forEach(l => l.classList.remove('active'));
+          panels.forEach(p => p.classList.remove('active'));
+          
+          link.classList.add('active');
+          document.getElementById(link.dataset.target).classList.add('active');
+        });
+      });
+
+      // Render Orders
+      const ordersContainer = document.getElementById('orders-container');
+      const ordersData = localStorage.getItem('rs_orders');
+      let orders = ordersData ? JSON.parse(ordersData) : [];
+
+      // Add a dummy order if empty
+      if(orders.length === 0) {
+        orders = [{
+          id: '#RS-2026-8472',
+          date: 'May 10, 2026',
+          total: 8499,
+          items: 1,
+          status: 'Delivered'
+        }];
+      }
+
+      let html = '';
+      orders.forEach(order => {
+        let statusClass = 'order-status--confirmed';
+        if(order.status === 'Shipped') statusClass = 'order-status--shipped';
+        if(order.status === 'Delivered') statusClass = 'order-status--delivered';
+
+        html += `
+          <div class="order-card">
+            <div class="order-header">
+              <div>
+                <div class="order-id">${order.id}</div>
+                <div class="order-date">${order.date}</div>
+              </div>
+              <div class="order-status ${statusClass}">${order.status}</div>
+            </div>
+            <div class="order-details">
+              <div class="order-items">${order.items} Item(s)</div>
+              <div class="order-total">₹${order.total.toLocaleString('en-IN')}</div>
+            </div>
+            <div style="margin-top:var(--space-md); display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn--outline" style="padding:0.5rem 1rem; font-size:0.85rem;">View Details</button>
+              <button class="btn btn--secondary" style="padding:0.5rem 1rem; font-size:0.85rem;">Reorder</button>
+              <a href="https://wa.me/917017549369?text=Track%20my%20order:%20${order.id}" class="btn" style="background:#25D366; color:#fff; padding:0.5rem 1rem; font-size:0.85rem;" target="_blank"><i class="fab fa-whatsapp"></i> Track</a>
+            </div>
+          </div>
+        `;
+      });
+      ordersContainer.innerHTML = html;
+    });
+  </script>
+</body>
+</html>

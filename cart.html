@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Shopping Cart | Radhika Sarries</title>
+  <meta name="description" content="Review your selected premium Surat sarees before checkout. Fast delivery and easy returns.">
+  <meta name="google-site-verification" content="googledef9f98bae932944.html">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-container">
+      <button class="search-close" id="search-close" aria-label="Close search"><i class="fas fa-times"></i></button>
+      <div class="search-input-wrapper">
+        <i class="fas fa-search" style="font-size:1.5rem; margin-right:1rem; color:var(--clr-primary);"></i>
+        <input type="text" id="search-input" placeholder="Search for sarees, fabrics, colors...">
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__container">
+      <a href="index.html" class="navbar__logo">Radhika Sarries</a>
+      <button class="navbar__mobile-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+      
+      <nav class="navbar__menu">
+        <ul class="navbar__nav">
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li><a href="shop/index.html" class="navbar__link">Shop</a></li>
+          <li><a href="gallery.html" class="navbar__link">Gallery</a></li>
+          <li><a href="testimonials.html" class="navbar__link">Testimonials</a></li>
+          <li><a href="blog/index.html" class="navbar__link">Blog</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__actions">
+        <div class="lang-switcher">
+          <div class="lang-switcher__current"><span>EN</span> <i class="fas fa-chevron-down" style="font-size:0.7rem;"></i></div>
+          <div class="lang-switcher__dropdown">
+            <a href="#" class="lang-switcher__item" data-lang="en">English</a>
+            <a href="#" class="lang-switcher__item" data-lang="kn">ಕನ್ನಡ</a>
+            <a href="#" class="lang-switcher__item" data-lang="hi">हिंदी</a>
+          </div>
+        </div>
+        <button class="nav-icon-btn search-toggle-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <a href="account/index.html" class="nav-icon-btn" aria-label="Account"><i class="far fa-user"></i></a>
+        <a href="cart.html" class="nav-icon-btn" aria-label="Cart">
+          <i class="fas fa-shopping-bag" style="color:var(--clr-primary);"></i>
+          <span class="cart-badge" style="display:none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container cart-page">
+    <h1 class="section__title" style="text-align:left; margin-bottom:0;">Your Cart (<span id="cart-count-header">0</span>)</h1>
+    
+    <div id="empty-cart-state" style="display:none; text-align:center; padding:var(--space-3xl) 0;">
+      <i class="fas fa-shopping-cart" style="font-size:4rem; color:var(--clr-border); margin-bottom:var(--space-md);"></i>
+      <h2 style="font-family:var(--ff-heading); color:var(--clr-primary); margin-bottom:var(--space-sm);">Your cart is empty</h2>
+      <p style="color:var(--clr-text-light); margin-bottom:var(--space-xl);">Looks like you haven't added any gorgeous sarees yet.</p>
+      <a href="shop/index.html" class="btn btn--primary">Shop Now</a>
+    </div>
+
+    <div class="cart-layout" id="cart-content">
+      <!-- LEFT: Cart Items -->
+      <div class="cart-items" id="cart-items-container">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- RIGHT: Order Summary -->
+      <div>
+        <div class="cart-summary">
+          <h2 class="cart-summary__title">Order Summary</h2>
+          <div class="cart-summary__row">
+            <span>Subtotal</span>
+            <span id="cart-subtotal">₹0</span>
+          </div>
+          <div class="cart-summary__row">
+            <span>Delivery</span>
+            <span id="cart-delivery" style="color:#2E7D32;">Free</span>
+          </div>
+          <div class="cart-summary__row" id="discount-row" style="display:none; color:var(--clr-secondary);">
+            <span>Discount (<span id="discount-code"></span>)</span>
+            <span id="cart-discount">-₹0</span>
+          </div>
+          <div class="cart-summary__row cart-summary__row--total">
+            <span>Total</span>
+            <span id="cart-total">₹0</span>
+          </div>
+
+          <div class="coupon-box">
+            <input type="text" id="coupon-input" placeholder="Coupon Code (e.g., RADHIKA10)">
+            <button id="apply-coupon-btn">Apply</button>
+          </div>
+          <p id="coupon-msg" style="font-size:0.8rem; margin-top:-10px; margin-bottom:15px;"></p>
+
+          <a href="checkout.html" class="btn btn--secondary" style="width:100%; margin-bottom:10px;"><i class="fas fa-lock"></i> Proceed to Checkout</a>
+          <button class="btn btn--outline" id="whatsapp-enquire-btn" style="width:100%; border-color:#25D366; color:#25D366;"><i class="fab fa-whatsapp"></i> Or enquire via WhatsApp</button>
+          
+          <div class="secure-badges">
+            <span><i class="fas fa-lock"></i> Safe Checkout</span>
+            <span><i class="fas fa-check-circle"></i> Authentic</span>
+            <span><i class="fas fa-undo"></i> Easy Returns</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer (omitted for brevity in template, identical to others) -->
+  <footer class="footer" id="footer" role="contentinfo" style="margin-top:auto;">
+    <div class="container">
+      <div class="footer__bottom">
+        <p>&copy; 2026 Radhika Sarries. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/language.js"></script>
+  <script>
+    let appliedDiscount = 0;
+
+    function renderCart() {
+      const cart = getCart();
+      const container = document.getElementById('cart-items-container');
+      const emptyState = document.getElementById('empty-cart-state');
+      const contentState = document.getElementById('cart-content');
+      const headerCount = document.getElementById('cart-count-header');
+      
+      headerCount.textContent = cart.length;
+
+      if (cart.length === 0) {
+        emptyState.style.display = 'block';
+        contentState.style.display = 'none';
+        return;
+      }
+
+      emptyState.style.display = 'none';
+      contentState.style.display = 'grid';
+
+      let html = '';
+      cart.forEach(item => {
+        html += `
+          <div class="cart-item">
+            <img src="${item.image.replace('../', '')}" alt="${item.name}" class="cart-item__img">
+            <div class="cart-item__details">
+              <h3 class="cart-item__title">${item.name}</h3>
+              <div class="cart-item__meta">Fabric: ${item.fabric} | Color: ${item.color}</div>
+              <div class="cart-item__price-row">
+                <div class="qty-selector">
+                  <button class="qty-btn" onclick="updateQty('${item.id}', ${item.qty - 1})">−</button>
+                  <input type="text" class="qty-input" value="${item.qty}" readonly>
+                  <button class="qty-btn" onclick="updateQty('${item.id}', ${item.qty + 1})">+</button>
+                </div>
+                <div class="cart-item__price">₹${(item.price * item.qty).toLocaleString('en-IN')}</div>
+              </div>
+            </div>
+            <button class="cart-item__remove" onclick="removeFromCart('${item.id}')" title="Remove"><i class="fas fa-trash"></i></button>
+          </div>
+        `;
+      });
+      
+      container.innerHTML = html;
+      updateTotals();
+    }
+
+    function updateTotals() {
+      const subtotal = getCartTotal();
+      let delivery = subtotal > 2000 ? 0 : 99;
+      let total = subtotal + delivery - appliedDiscount;
+      
+      document.getElementById('cart-subtotal').textContent = '₹' + subtotal.toLocaleString('en-IN');
+      document.getElementById('cart-delivery').textContent = delivery === 0 ? 'Free' : '₹99';
+      document.getElementById('cart-total').textContent = '₹' + total.toLocaleString('en-IN');
+      
+      const whatsappBtn = document.getElementById('whatsapp-enquire-btn');
+      if (whatsappBtn) {
+        whatsappBtn.onclick = () => {
+          window.open('https://wa.me/917017549369?text=' + generateWhatsAppCartMessage(), '_blank');
+        };
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Pre-populate if empty for demo purposes (Phase 3 spec)
+      if (!localStorage.getItem('rs_cart') || JSON.parse(localStorage.getItem('rs_cart')).length === 0) {
+        const demoCart = [
+          { id: 'p1', name: 'Kanjivaram Bridal Silk Saree', price: 12999, qty: 1, image: 'assets/images/bridal-sarees.png', fabric: 'Kanjivaram Silk', color: 'Deep Maroon' },
+          { id: 'p2', name: 'Banarasi Georgette Wedding Saree', price: 8499, qty: 1, image: 'assets/images/silk-sarees.png', fabric: 'Banarasi Georgette', color: 'Royal Blue' }
+        ];
+        localStorage.setItem('rs_cart', JSON.stringify(demoCart));
+      }
+      
+      renderCart();
+
+      document.getElementById('apply-coupon-btn').addEventListener('click', () => {
+        const code = document.getElementById('coupon-input').value;
+        const msg = document.getElementById('coupon-msg');
+        const discountResult = applyCoupon(code);
+        
+        if (discountResult) {
+          const subtotal = getCartTotal();
+          if (discountResult.type === 'percent') {
+            appliedDiscount = (subtotal * discountResult.value) / 100;
+          } else {
+            appliedDiscount = discountResult.value;
+          }
+          
+          document.getElementById('discount-row').style.display = 'flex';
+          document.getElementById('discount-code').textContent = code.toUpperCase();
+          document.getElementById('cart-discount').textContent = '-₹' + appliedDiscount.toLocaleString('en-IN');
+          msg.textContent = 'Coupon applied successfully!';
+          msg.style.color = '#2E7D32';
+          updateTotals();
+        } else {
+          msg.textContent = 'Invalid coupon code.';
+          msg.style.color = '#d32f2f';
+          appliedDiscount = 0;
+          document.getElementById('discount-row').style.display = 'none';
+          updateTotals();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Radhika Sarries</title>
+  <meta name="description" content="Secure checkout at Radhika Sarries.">
+  <meta name="google-site-verification" content="googledef9f98bae932944.html">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .step-content { display: none; animation: fadeIn 0.4s ease; }
+    .step-content.active { display: block; }
+  </style>
+</head>
+<body>
+
+  <!-- Minimal Navbar for Checkout -->
+  <header class="navbar" style="border-bottom:1px solid var(--clr-border);">
+    <div class="container navbar__container" style="justify-content:center;">
+      <a href="index.html" class="navbar__logo">Radhika Sarries</a>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top:var(--space-2xl); margin-bottom:var(--space-3xl); max-width:1000px;">
+    
+    <div class="checkout-progress">
+      <div class="checkout-step active" id="indicator-1">
+        <div class="checkout-step__num">1</div>
+        <div class="checkout-step__label">Shipping</div>
+      </div>
+      <div class="checkout-step" id="indicator-2">
+        <div class="checkout-step__num">2</div>
+        <div class="checkout-step__label">Payment</div>
+      </div>
+      <div class="checkout-step" id="indicator-3">
+        <div class="checkout-step__num">3</div>
+        <div class="checkout-step__label">Confirmation</div>
+      </div>
+    </div>
+
+    <div class="cart-layout">
+      <!-- MAIN FLOW -->
+      <div>
+        <!-- STEP 1: Shipping -->
+        <div class="step-content active" id="step-1">
+          <div class="checkout-form">
+            <h2 class="section__title" style="text-align:left; font-size:1.5rem; margin-bottom:var(--space-lg);">Shipping Details</h2>
+            <form id="form-shipping" class="form-grid">
+              <div class="form-group form-group--full">
+                <label>Full Name</label>
+                <input type="text" id="c-name" required placeholder="John Doe" style="width:100%; padding:0.75rem; border:1px solid var(--clr-border); border-radius:4px;">
+              </div>
+              <div class="form-group">
+                <label>Mobile Number</label>
+                <input type="tel" id="c-phone" required placeholder="10-digit mobile number" style="width:100%; padding:0.75rem; border:1px solid var(--clr-border); border-radius:4px;">
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="c-email" required placeholder="Email for order updates" style="width:100%; padding:0.75rem; border:1px solid var(--clr-border); border-radius:4px;">
+              </div>
+              <div class="form-group form-group--full">
+                <label>Address Line 1</label>
+                <input type="text" id="c-addr1" required placeholder="House/Flat No., Building Name" style="width:100%; padding:0.75rem; border:1px solid var(--clr-border); border-radius:4px;">
+              </div>
+              <div class="form-group form-group--full">
+                <label>Address Line 2 (Optional)</label>
+                <input type="text" id="c-addr2" placeholder="Street Name, Area, Landmark" style="width:100%; padding:0.75rem; border:1px solid var(--clr-border); border-radius:4px;">
+              </div>
+              <div class="form-group">
+                <label>City</label>
+                <input type="text" id="c-city" required placeholder="City" style="width:100%; padding:0.75rem; border:1px solid var(--clr-border); border-radius:4px;">
+              </div>
+              <div class="form-group">
+                <label>State</label>
+                <select id="c-state" required style="width:100%; padding:0.75rem; border:1px solid var(--clr-border); border-radius:4px; background:#fff;">
+                  <option value="Karnataka" selected>Karnataka</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Pincode</label>
+                <input type="text" id="c-pin" required placeholder="6-digit PIN code" style="width:100%; padding:0.75rem; border:1px solid var(--clr-border); border-radius:4px;">
+              </div>
+              <div class="form-group form-group--full" style="margin-top:var(--space-md);">
+                <label style="display:flex; align-items:center; gap:10px; cursor:pointer;">
+                  <input type="checkbox" checked style="width:16px; height:16px; accent-color:var(--clr-primary);"> Same as billing address
+                </label>
+              </div>
+              <div class="form-group form-group--full" style="margin-top:var(--space-md);">
+                <button type="submit" class="btn btn--primary" style="width:100%;">Continue to Payment</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- STEP 2: Payment -->
+        <div class="step-content" id="step-2">
+          <div class="checkout-form">
+            <h2 class="section__title" style="text-align:left; font-size:1.5rem; margin-bottom:var(--space-lg);">Payment Method</h2>
+            <div class="payment-methods">
+              
+              <label class="payment-method active">
+                <div class="payment-method__header">
+                  <input type="radio" name="payment" value="whatsapp" checked>
+                  <i class="fab fa-whatsapp payment-method__icon" style="color:#25D366;"></i>
+                  <span class="payment-method__label">WhatsApp Order <span class="badge badge--bridal" style="margin-left:10px; font-size:0.7rem;">RECOMMENDED</span></span>
+                </div>
+                <div class="payment-method__desc">Fastest! We will confirm your order and share UPI details on WhatsApp immediately.</div>
+              </label>
+
+              <label class="payment-method">
+                <div class="payment-method__header">
+                  <input type="radio" name="payment" value="upi">
+                  <i class="fas fa-qrcode payment-method__icon"></i>
+                  <span class="payment-method__label">UPI (GPay, PhonePe, Paytm)</span>
+                </div>
+                <div class="payment-method__desc">Scan QR or enter UPI ID.</div>
+              </label>
+
+              <label class="payment-method">
+                <div class="payment-method__header">
+                  <input type="radio" name="payment" value="card">
+                  <i class="far fa-credit-card payment-method__icon"></i>
+                  <span class="payment-method__label">Credit / Debit Card</span>
+                </div>
+                <div class="payment-method__desc">Visa, MasterCard, RuPay supported.</div>
+              </label>
+
+              <label class="payment-method">
+                <div class="payment-method__header">
+                  <input type="radio" name="payment" value="cod">
+                  <i class="fas fa-rupee-sign payment-method__icon"></i>
+                  <span class="payment-method__label">Cash on Delivery</span>
+                </div>
+                <div class="payment-method__desc">Pay when your order arrives. (Additional ₹50 handling charge applies).</div>
+              </label>
+
+            </div>
+
+            <button id="place-order-btn" class="btn btn--secondary" style="width:100%; margin-top:var(--space-xl);">Place Order</button>
+            <button id="back-to-shipping" class="btn btn--outline" style="width:100%; margin-top:var(--space-sm);">Back to Shipping</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Confirmation -->
+        <div class="step-content" id="step-3">
+          <div class="checkout-form order-success">
+            <div class="success-checkmark"><i class="fas fa-check"></i></div>
+            <h2 style="font-family:var(--ff-heading); color:var(--clr-primary); font-size:2rem; margin-bottom:var(--space-sm);">Order Confirmed! 🎉</h2>
+            <p style="font-size:1.1rem; margin-bottom:var(--space-md);">Order Number: <strong id="order-id-display">#RS-2026-XXXX</strong></p>
+            <p style="color:var(--clr-text-light); margin-bottom:var(--space-xl);">We've received your order. If you chose WhatsApp ordering, we'll reach out within 2 hours to confirm your details.</p>
+            
+            <div style="background:var(--clr-surface); padding:var(--space-lg); border-radius:var(--radius-sm); text-align:left; margin-bottom:var(--space-xl);">
+              <h4 style="margin-bottom:10px;">Shipping To:</h4>
+              <p id="confirm-address" style="font-size:0.9rem; color:var(--clr-text-light); line-height:1.6;"></p>
+            </div>
+
+            <div style="display:flex; gap:10px; justify-content:center;">
+              <a href="shop/index.html" class="btn btn--outline">Continue Shopping</a>
+              <button class="btn" style="background:#25D366; color:#fff;" onclick="trackOnWhatsApp()"><i class="fab fa-whatsapp"></i> Track on WhatsApp</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR SUMMARY -->
+      <div id="checkout-sidebar">
+        <div class="cart-summary" style="top:20px;">
+          <h3 style="font-family:var(--ff-heading); margin-bottom:var(--space-md);">Order Summary</h3>
+          <div id="checkout-items" style="margin-bottom:var(--space-lg); border-bottom:1px solid var(--clr-border); padding-bottom:var(--space-md);">
+            <!-- Populated via JS -->
+          </div>
+          
+          <div class="cart-summary__row">
+            <span>Subtotal</span>
+            <span id="co-subtotal">₹0</span>
+          </div>
+          <div class="cart-summary__row">
+            <span>Delivery</span>
+            <span id="co-delivery" style="color:#2E7D32;">Free</span>
+          </div>
+          <div class="cart-summary__row cart-summary__row--total">
+            <span>Total</span>
+            <span id="co-total">₹0</span>
+          </div>
+          
+          <div class="secure-badges" style="margin-top:var(--space-xl);">
+            <span><i class="fas fa-lock"></i> SSL Secured</span>
+            <span><i class="fas fa-shield-alt"></i> Safe Payment</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/cart.js"></script>
+  <script>
+    let checkoutData = {};
+
+    function renderCheckoutSummary() {
+      const cart = getCart();
+      if(cart.length === 0 && !window.location.hash.includes('success')) {
+        window.location.href = 'cart.html';
+        return;
+      }
+      
+      const container = document.getElementById('checkout-items');
+      let html = '';
+      cart.forEach(item => {
+        html += `
+          <div style="display:flex; gap:10px; margin-bottom:10px; font-size:0.85rem;">
+            <img src="${item.image.replace('../', '')}" style="width:50px; height:66px; object-fit:cover; border-radius:4px;">
+            <div style="flex:1;">
+              <div style="font-weight:600; color:var(--clr-primary);">${item.name}</div>
+              <div style="color:var(--clr-text-light);">Qty: ${item.qty}</div>
+              <div style="font-weight:600;">₹${(item.price * item.qty).toLocaleString('en-IN')}</div>
+            </div>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+
+      const subtotal = getCartTotal();
+      let delivery = subtotal > 2000 ? 0 : 99;
+      let total = subtotal + delivery;
+
+      document.getElementById('co-subtotal').textContent = '₹' + subtotal.toLocaleString('en-IN');
+      document.getElementById('co-delivery').textContent = delivery === 0 ? 'Free' : '₹99';
+      document.getElementById('co-total').textContent = '₹' + total.toLocaleString('en-IN');
+      
+      checkoutData.total = total;
+    }
+
+    function switchStep(step) {
+      document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.checkout-step').forEach(el => el.classList.remove('active', 'completed'));
+      
+      document.getElementById('step-'+step).classList.add('active');
+      
+      for(let i=1; i<=3; i++) {
+        const ind = document.getElementById('indicator-'+i);
+        if(i < step) ind.classList.add('completed');
+        else if(i === step) ind.classList.add('active');
+      }
+
+      if(step === 3) {
+        document.getElementById('checkout-sidebar').style.display = 'none';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCheckoutSummary();
+
+      // Form 1 Submit
+      document.getElementById('form-shipping').addEventListener('submit', (e) => {
+        e.preventDefault();
+        checkoutData.shipping = {
+          name: document.getElementById('c-name').value,
+          phone: document.getElementById('c-phone').value,
+          city: document.getElementById('c-city').value,
+          state: document.getElementById('c-state').value,
+          pin: document.getElementById('c-pin').value,
+          address: document.getElementById('c-addr1').value
+        };
+        switchStep(2);
+      });
+
+      document.getElementById('back-to-shipping').addEventListener('click', () => switchStep(1));
+
+      // Payment Selection Styling
+      const paymentMethods = document.querySelectorAll('.payment-method');
+      paymentMethods.forEach(method => {
+        const input = method.querySelector('input[type="radio"]');
+        input.addEventListener('change', () => {
+          paymentMethods.forEach(m => m.classList.remove('active'));
+          if(input.checked) method.classList.add('active');
+        });
+      });
+
+      // Place Order
+      document.getElementById('place-order-btn').addEventListener('click', () => {
+        const method = document.querySelector('input[name="payment"]:checked').value;
+        const orderId = '#RS-2026-' + Math.floor(1000 + Math.random() * 9000);
+        
+        if (method === 'whatsapp') {
+          let msg = `*NEW ORDER ${orderId}*\n\n`;
+          msg += `Name: ${checkoutData.shipping.name}\n`;
+          msg += `Phone: ${checkoutData.shipping.phone}\n`;
+          msg += `Address: ${checkoutData.shipping.address}, ${checkoutData.shipping.city}, ${checkoutData.shipping.state} - ${checkoutData.shipping.pin}\n\n`;
+          msg += `*Items:*\n`;
+          getCart().forEach(item => {
+            msg += `- ${item.name} (Qty: ${item.qty})\n`;
+          });
+          msg += `\n*Total:* ₹${checkoutData.total.toLocaleString('en-IN')}\n\n`;
+          msg += `I would like to pay via WhatsApp. Please confirm!`;
+          
+          window.open('https://wa.me/917017549369?text=' + encodeURIComponent(msg), '_blank');
+        }
+
+        // Show Success
+        document.getElementById('order-id-display').textContent = orderId;
+        document.getElementById('confirm-address').innerHTML = `
+          ${checkoutData.shipping.name}<br>
+          ${checkoutData.shipping.address}<br>
+          ${checkoutData.shipping.city}, ${checkoutData.shipping.state} - ${checkoutData.shipping.pin}<br>
+          Ph: ${checkoutData.shipping.phone}
+        `;
+        
+        switchStep(3);
+        
+        // Add to simulated order history
+        let orders = JSON.parse(localStorage.getItem('rs_orders') || '[]');
+        orders.unshift({
+          id: orderId,
+          date: new Date().toLocaleDateString('en-IN', {day:'numeric', month:'short', year:'numeric'}),
+          total: checkoutData.total,
+          items: getCart().length,
+          status: 'Confirmed'
+        });
+        localStorage.setItem('rs_orders', JSON.stringify(orders));
+        
+        // Clear cart
+        localStorage.setItem('rs_cart', '[]');
+      });
+    });
+
+    function trackOnWhatsApp() {
+      const orderId = document.getElementById('order-id-display').textContent;
+      const msg = `Hi, I would like to track my order: ${orderId}`;
+      window.open('https://wa.me/917017549369?text=' + encodeURIComponent(msg), '_blank');
+    }
+  </script>
+</body>
+</html>

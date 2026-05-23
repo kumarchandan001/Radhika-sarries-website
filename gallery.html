@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saree Gallery | Radhika Sarries – Bridal, Silk & Designer Collections</title>
+  <meta name="description" content="Browse our curated gallery of premium Surat sarees — bridal collections, silk sarees, designer wear, and customer draping styles at Radhika Sarries, Karnataka.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Saree Gallery | Radhika Sarries">
+  <meta property="og:description" content="Browse our curated gallery of premium Surat sarees at Radhika Sarries, Karnataka.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪷</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/styles.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script>
+  <meta name="google-site-verification" content="googledef9f98bae932944.html">
+</head>
+<body>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-container">
+      <button class="search-close" id="search-close" aria-label="Close search"><i class="fas fa-times"></i></button>
+      <div class="search-input-wrapper">
+        <i class="fas fa-search" style="font-size:1.5rem; margin-right:1rem; color:var(--clr-primary);"></i>
+        <input type="text" id="search-input" placeholder="Search for sarees, fabrics, colors...">
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+
+  
+  <header class="navbar" id="navbar">
+    <div class="container navbar__container">
+      <a href="index.html" class="navbar__logo">Radhika Sarries</a>
+      <button class="navbar__mobile-toggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+      
+      <nav class="navbar__menu">
+        <ul class="navbar__nav">
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li><a href="shop/index.html" class="navbar__link">Shop <span class="product-badge product-badge--new" style="font-size:0.5rem;padding:2px 4px;margin-left:4px;vertical-align:top;">NEW</span></a></li>
+          <li><a href="gallery.html" class="navbar__link active">Gallery</a></li>
+          <li><a href="testimonials.html" class="navbar__link ">Testimonials</a></li>
+          <li><a href="blog/index.html" class="navbar__link ">Blog</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__actions">
+        <div class="lang-switcher">
+          <div class="lang-switcher__current"><span>EN</span> <i class="fas fa-chevron-down" style="font-size:0.7rem;"></i></div>
+          <div class="lang-switcher__dropdown">
+            <a href="#" class="lang-switcher__item" data-lang="en">English</a>
+            <a href="#" class="lang-switcher__item" data-lang="kn">ಕನ್ನಡ</a>
+            <a href="#" class="lang-switcher__item" data-lang="hi">हिंदी</a>
+          </div>
+        </div>
+        <button class="nav-icon-btn search-toggle-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+        <a href="account/index.html" class="nav-icon-btn" aria-label="Account"><i class="far fa-user"></i></a>
+        <a href="cart.html" class="nav-icon-btn" aria-label="Cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-badge" style="display:none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Page Hero -->
+  <section class="page-hero" aria-label="Gallery Hero">
+    <div class="container page-hero__content">
+      <h1 class="page-hero__title">Our Collection <span>Gallery</span></h1>
+      <p class="page-hero__subtitle">From bridal masterpieces to everyday elegance — every drape tells a story.</p>
+    </div>
+  </section>
+
+  <!-- Filter Tabs -->
+  <div class="filter-tabs">
+    <div class="container">
+      <div class="filter-tabs__list">
+        <button class="filter-tab filter-tab--active" data-category="all">All</button>
+        <button class="filter-tab" data-category="bridal">Bridal</button>
+        <button class="filter-tab" data-category="silk">Silk</button>
+        <button class="filter-tab" data-category="cotton">Cotton</button>
+        <button class="filter-tab" data-category="designer">Designer</button>
+        <button class="filter-tab" data-category="festive">Festive</button>
+        <button class="filter-tab" data-category="store">Store Photos</button>
+        <button class="filter-tab" data-category="customer">Customer Styles</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="section" aria-label="Gallery Grid">
+      <div class="container">
+        <div class="gallery-page__grid">
+
+          <div class="gallery-page__item reveal reveal-delay-1" data-category="bridal">
+            <img src="assets/images/bridal-sarees.png" alt="Red bridal saree with gold zari" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Bridal Collection</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item reveal reveal-delay-2" data-category="silk">
+            <img src="assets/images/silk-sarees.png" alt="Pure silk saree in purple and gold" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Silk Elegance</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item reveal reveal-delay-3" data-category="cotton">
+            <img src="assets/images/cotton-sarees.png" alt="Pastel green cotton saree" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Cotton Comfort</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item reveal reveal-delay-4" data-category="designer">
+            <img src="assets/images/designer-collections.png" alt="Designer saree collection display" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Designer Picks</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item reveal reveal-delay-5" data-category="festive">
+            <img src="assets/images/festive-wear.png" alt="Gold and maroon festive saree" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Festive Specials</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item reveal reveal-delay-6" data-category="store">
+            <img src="assets/images/store-interior.png" alt="Radhika Sarries store interior" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Our Store</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item reveal reveal-delay-1" data-category="bridal">
+            <img src="assets/images/blog-wedding-saree.png" alt="South Indian bridal saree" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Bridal Elegance</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item reveal reveal-delay-2" data-category="customer">
+            <img src="assets/images/instagram-1.png" alt="Customer draping red Banarasi silk" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Customer Style</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item reveal reveal-delay-3" data-category="designer">
+            <img src="assets/images/blog-trending-sarees.png" alt="Trending designer sarees" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Designer Trends</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item reveal reveal-delay-4" data-category="cotton">
+            <img src="assets/images/daily-wear.png" alt="Daily wear cotton saree" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Daily Wear</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item reveal reveal-delay-5" data-category="silk">
+            <img src="assets/images/instagram-2.png" alt="Teal and gold silk saree flat lay" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Silk Splendor</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item reveal reveal-delay-6" data-category="festive">
+            <img src="assets/images/blog-festival-saree.png" alt="Festival saree with decorations" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Festival Ready</span>
+            </div>
+          </div>
+
+          <!-- Load More Hidden Items -->
+          <div class="gallery-page__item load-more-hidden hidden" data-category="bridal">
+            <img src="assets/images/gallery-display.png" alt="Bridal saree arrangement" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Bridal Collection</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item load-more-hidden hidden" data-category="customer">
+            <img src="assets/images/blog-office-saree.png" alt="Office wear saree styling" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Customer Style</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item load-more-hidden hidden" data-category="silk">
+            <img src="assets/images/bridal-sarees.png" alt="Rich silk bridal saree" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Silk Heritage</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item load-more-hidden hidden" data-category="store">
+            <img src="assets/images/store-interior.png" alt="Store display shelves" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Store Experience</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item load-more-hidden hidden" data-category="designer">
+            <img src="assets/images/designer-collections.png" alt="Exclusive designer pieces" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Designer Exclusive</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item load-more-hidden hidden" data-category="festive">
+            <img src="assets/images/festive-wear.png" alt="Festive gold saree" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Festive Gold</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item load-more-hidden hidden" data-category="cotton">
+            <img src="assets/images/cotton-sarees.png" alt="Handloom cotton collection" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Handloom Cotton</span>
+            </div>
+          </div>
+
+          <div class="gallery-page__item load-more-hidden hidden" data-category="customer">
+            <img src="assets/images/instagram-1.png" alt="Happy customer with saree" loading="lazy">
+            <div class="gallery-page__item-overlay">
+              <div class="gallery-page__item-icon"><i class="fas fa-search-plus"></i></div>
+              <span class="gallery-page__item-tag">Happy Customer</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="load-more-wrapper">
+          <button class="load-more-btn">Load More <i class="fas fa-arrow-down"></i></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox__overlay"></div>
+    <div class="lightbox__content">
+      <img class="lightbox__img" src="" alt="Gallery Image">
+    </div>
+    <button class="lightbox__close" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
+    <button class="lightbox__prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+    <button class="lightbox__next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox__counter">1 / 20</div>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand-name">Radhika Sarries</div>
+          <p class="footer__brand-tagline">Premium Surat Sarees &amp; Elegant Ladies Wear. Bringing the finest ethnic fashion from Surat to the women of Karnataka since years.</p>
+        </div>
+        <div>
+          <h3 class="footer__heading">Quick Links</h3>
+          <nav class="footer__links" aria-label="Footer Navigation">
+            <a href="index.html" class="footer__link">Home</a>
+            <a href="index.html#about" class="footer__link">About Us</a>
+            <a href="index.html#collections" class="footer__link">Collections</a>
+            <a href="gallery.html" class="footer__link">Gallery</a>
+            <a href="testimonials.html" class="footer__link">Testimonials</a>
+            <a href="blog/index.html" class="footer__link">Blog</a>
+            <a href="index.html#contact" class="footer__link">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <h3 class="footer__heading">Connect With Us</h3>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer__social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/917017549369" class="footer__social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">&copy; 2026 Radhika Sarries. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/917017549369" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <script src="js/main.js"></script>
+
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/language.js"></script>
+</body>
+</html>
